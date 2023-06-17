@@ -1,0 +1,90 @@
+/* Set the overall style of the app */
+body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+}
+
+/* Style the form */
+.form-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.title {
+  color: orange;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 95%;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.button {
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #337ab7;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the suggested cities list */
+.suggested-cities {
+  margin: 0;
+  padding: 0;
+}
+
+.suggested-city {
+  list-style-type: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Style the weather container */
+.weather-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.location {
+  color: rgb(17, 194, 17);
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.icon {
+  width: 100px;
+}
+
+.temperature {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.details {
+  margin-top: 10px;
+}
+
+.detail {
+  margin-bottom: 5px;
+}

@@ -8,7 +8,6 @@ function App() {
   return (
     <Provider store={store}>
       <div>
-        <h1>Weather App</h1>
         <City />
         <Weather />
       </div>
