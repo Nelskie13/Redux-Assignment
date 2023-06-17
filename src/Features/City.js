@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchApiData } from "./WeatherSlice";
 import { fetchSuggestedCities } from "./CitySlice";
+import { setSuggestedCities } from "./CitySlice";
 
 const City = () => {
   const [cityName, setCityName] = useState("");
@@ -10,6 +11,9 @@ const City = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!cityName) {
+      return; // do nothing if cityName is empty
+    }
     dispatch(fetchApiData(cityName));
     setCityName("");
   };
@@ -21,8 +25,17 @@ const City = () => {
   };
 
   const handleSuggestedCityClick = (cityName) => {
-    setCityName(cityName); // update the input field with the selected city
-    dispatch(fetchApiData(cityName));
+    // filter the suggestedCities array to include only the selected city
+    const filteredCities = suggestedCities.filter(
+      (city) => city.name === cityName
+    );
+
+    // update the input field with the selected city
+    setCityName(cityName);
+
+    // update the suggestedCities state variable with the filtered array
+    dispatch(fetchSuggestedCities(cityName));
+    dispatch(setSuggestedCities(filteredCities));
   };
 
   return (
@@ -35,6 +48,7 @@ const City = () => {
           onChange={handleInputChange}
           className="input"
           placeholder="Enter City Name"
+          required
         />
       </label>
       <button type="submit" className="button">

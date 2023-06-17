@@ -23,7 +23,11 @@ const initialState = {
 const citySlice = createSlice({
   name: "city",
   initialState,
-  reducers: {},
+  reducers: {
+    setSuggestedCities: (state, action) => {
+      state.suggestedCities = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchSuggestedCities.pending, (state) => {
@@ -39,5 +43,5 @@ const citySlice = createSlice({
       });
   },
 });
-
+export const { setSuggestedCities } = citySlice.actions;
 export default citySlice.reducer;
