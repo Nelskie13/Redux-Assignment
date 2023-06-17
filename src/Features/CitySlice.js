@@ -14,7 +14,7 @@ export const fetchSuggestedCities = createAsyncThunk(
 );
 
 const initialState = {
-  cityName: "",
+  cityName: null,
   suggestedCities: [],
   isLoading: false,
   error: null,
