@@ -57,9 +57,9 @@ const City = () => {
 
       {suggestedCities.length > 0 && (
         <ul className="suggested-cities">
-          {suggestedCities.map((city) => (
+          {suggestedCities.map((city, id) => (
             <li
-              key={city.name}
+              key={city.name + id}
               onClick={() => handleSuggestedCityClick(city.name)}
               className="suggested-city"
             >
