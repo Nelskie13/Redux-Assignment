@@ -12,7 +12,9 @@ const Weather = () => {
 
   return (
     <div className="weather-container">
-      <h2 className="location">{location.name}</h2>
+      <h2 className="location">
+        {location.name}, {location.country}
+      </h2>
       <div className="weather-info">
         <img
           className="icon"
@@ -21,6 +23,7 @@ const Weather = () => {
         />
         <div className="temperature">{current.temp_c}°C</div>
         <div className="details">
+          <div className="feelslike">Feels like: {current.feelslike_c}°C</div>
           <div>Humidity: {current.humidity}%</div>
           <div>Condition: {current.condition.text}</div>
           <div>Wind: {current.wind_kph} km/h</div>
