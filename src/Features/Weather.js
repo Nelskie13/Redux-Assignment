@@ -1,15 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
+// This component renders a weather forecast.
 const Weather = () => {
+  // The `useSelector` hook gets the current weather data from the Redux store.
   const weatherData = useSelector((state) => state.weather.weather);
 
+  // If there is no weather data, return null.
   if (!weatherData) {
     return null;
   }
 
+  // The `location` and `current` properties contain the current weather information.
   const { location, current } = weatherData;
 
+  // The `weather-container` div contains the main weather information.
   return (
     <div className="weather-container">
       <h2 className="location">
@@ -36,4 +41,5 @@ const Weather = () => {
   );
 };
 
+// This exports the Weather component.
 export default Weather;

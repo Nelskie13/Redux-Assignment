@@ -9,18 +9,29 @@ const City = () => {
   const dispatch = useDispatch();
   const suggestedCities = useSelector((state) => state.city.suggestedCities);
 
+  // This function handles the `submit` event of the form.
   const handleSubmit = (event) => {
+    // Prevent the default behavior of the form.
     event.preventDefault();
+
+    // If the city name is empty, do nothing.
     if (!cityName) {
-      return; // do nothing if cityName is empty
+      return;
     }
+    // Dispatch an action to fetch the weather data for the city name.
     dispatch(fetchApiData(cityName));
+    // Clear the city name input field.
     setCityName("");
   };
-
+  // This function handles the `change` event of the city name input field.
   const handleInputChange = (event) => {
+    // Get the new value of the input field.
     const inputValue = event.target.value;
+
+    // Set the city name state to the new value.
     setCityName(inputValue);
+
+    // Dispatch an action to fetch suggested cities for the new value.
     dispatch(fetchSuggestedCities(inputValue));
   };
 
