@@ -5,8 +5,13 @@ import { fetchSuggestedCities } from "./CitySlice";
 import { setSuggestedCities } from "./CitySlice";
 
 const City = () => {
+  // The `useState` hook creates two state variables: `cityName` and `setCityName`.
+  // The `cityName` state variable stores the user's input for the city name.
+  // The `setCityName` state variable is a function that updates the `cityName` state variable.
   const [cityName, setCityName] = useState("");
+  // The `useSelector` hook gets the suggested cities from the Redux store.
   const dispatch = useDispatch();
+  // The `useSelector` hook gets the suggested cities from the Redux store.
   const suggestedCities = useSelector((state) => state.city.suggestedCities);
 
   // This function handles the `submit` event of the form.
